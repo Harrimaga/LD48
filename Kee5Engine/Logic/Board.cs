@@ -39,7 +39,7 @@ namespace LD48.Logic
                     if (cards.Count < 2)
                     {
                         cards.Add(card);
-                        card.SetPosition(new Vector2(500 + 50 * cards.Count - 50, 500));
+                        card.SetPosition(new Vector2(400 + 110 * cards.Count - 50, 690 - 300 * side));
                         Globals.gameHandler.GetPlayerFromID(card.playerID).hand.RemoveCardFromHand(card);
                         return true;
                     }

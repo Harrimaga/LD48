@@ -93,6 +93,13 @@ namespace LD48.Logic.Cards
 
         public void Flip()
         {
+            bool removed = false;
+            if (Globals.activeButtons.Contains(_card)) 
+            {
+                Globals.activeButtons.Remove(_card);
+                removed = true;
+            }
+
             if (front)
             {
                 _card = new Button(position.X, position.Y, 100, 180, 5, "TestCard", Vector4.One, false, () => { OnClick(); });
@@ -100,6 +107,11 @@ namespace LD48.Logic.Cards
             else
             {
                 _card = new Button(position.X, position.Y, 100, 180, 5, "TestCard", name, Vector4.One, Vector3.Zero, TextAlignment.CENTER, false, () => { OnClick(); });
+            }
+
+            if (removed)
+            {
+                Globals.activeButtons.Add(_card);
             }
 
             front = !front;
