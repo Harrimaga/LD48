@@ -195,6 +195,14 @@ namespace LD48
             }
         }
 
+        public void SetPosition(Vector2 position)
+        {
+            posX = position.X;
+            posY = position.Y;
+            _background.posX = position.X;
+            _background.posY = position.Y;
+        }
+
         /// <summary>
         /// Check if a click was within the bounds of the button
         /// </summary>
@@ -208,8 +216,11 @@ namespace LD48
 
         public void UnLoad()
         {
-            Console.WriteLine($"Unloaded {_textRender.name}");
-            GL.DeleteTexture(_textRender.Handle);
+            if (_textRender != null)
+            {
+                Console.WriteLine($"Unloaded {_textRender.name}");
+                GL.DeleteTexture(_textRender.Handle);
+            }
             Globals.unloaded++;
         }
     }

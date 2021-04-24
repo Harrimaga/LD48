@@ -12,6 +12,7 @@ using OpenTK.Windowing.GraphicsLibraryFramework;
 using LD48.IO;
 using LD48.Shaders;
 using LD48.Audio;
+using LD48.Logic;
 
 namespace LD48
 {
@@ -29,6 +30,7 @@ namespace LD48
         public static Vector2 WindowSize { get; private set; }
         public static TextRenderer2D textRenderer;
         private Sprite _player, _backGround;
+        private GameHandler gameHandler;
 
         /// <summary>
         /// Create an OpenGL GameWindow
@@ -94,8 +96,9 @@ namespace LD48
             _player = new Sprite(textures.GetTexture("PlayerIdle"), 128, 128, 960, 540, 1f, 0, Vector4.One, 4, 0.1);
             _backGround = new Sprite(textures.GetTexture("Test"), 1920, 1080, 960, 540, -1f, 0, Vector4.One);
 
-            // Create a test button
-            Globals.activeButtons.Add(new Button(200, 980, 400, 200, 2, "Test", "Button", new Vector4(0.2f, 0, 0, 1), Vector3.One, TextAlignment.CENTER, true, () => { Console.WriteLine("Clicked!"); }));
+            Globals.gameHandler = new GameHandler();
+
+            //WindowState = WindowState.Fullscreen;
 
             base.OnLoad();
         }
@@ -120,10 +123,6 @@ namespace LD48
             _shader.Use();
             _shader.SetMatrix4("view", camera.GetViewMatrix());
             _shader.SetMatrix4("projection", camera.GetProjectionMatrix());
-
-            // Draw Sprites:
-            _backGround.Draw();
-            _player.Draw();
 
             // Call Globals' draw method. This Draws all active buttons
             Globals.Draw();
@@ -169,11 +168,8 @@ namespace LD48
                 Close();
             }
 
-            // Update a Sprite
-            _player.Update(args.Time);
-
             // Call Globals' update, this updates the active Buttons as well as the AudioManager
-            Globals.Update();
+            Globals.Update(args.Time);
 
             base.OnUpdateFrame(args);
         }
@@ -184,11 +180,11 @@ namespace LD48
         /// <param name="e">Information about the click</param>
         protected override void OnMouseDown(MouseButtonEventArgs e)
         {
-            foreach (Button button in Globals.activeButtons)
+            for (int i = Globals.activeButtons.Count - 1; i >= 0; i--)
             {
-                if (button.IsInButton(MousePosition.X, MousePosition.Y))
+                if (Globals.activeButtons[i].IsInButton(MousePosition.X, MousePosition.Y))
                 {
-                    button.OnClick();
+                    Globals.activeButtons[i].OnClick();
                 }
             }
             base.OnMouseDown(e);
