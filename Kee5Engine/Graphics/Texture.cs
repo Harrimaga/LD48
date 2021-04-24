@@ -59,7 +59,7 @@ namespace LD48
                     PixelInternalFormat.Rgba,   // Target format of the pixels
                     image.Width,                // Width
                     image.Height,               // Height
-                    0,                          // Border. Must always be 0, lazy Khronos never removed it
+                    0,                          // Border. 
                     PixelFormat.Bgra,           // Format of the pixels
                     PixelType.UnsignedByte,     // Data type of the pixels
                     data.Scan0                  // The actual pixels

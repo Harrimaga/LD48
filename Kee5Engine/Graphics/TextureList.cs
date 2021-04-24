@@ -38,6 +38,10 @@ namespace LD48
         public void LoadTexture(string path, string name)
         {
             Texture texture = Texture.LoadFromFile(path, name);
+            if (_textures.ContainsKey(name))
+            {
+                GL.DeleteTexture(_textures[name].Handle);
+            }
             _textures[name] = texture;
         }
 
@@ -46,10 +50,15 @@ namespace LD48
         /// </summary>
         /// <param name="image">Bitmap</param>
         /// <param name="name">Name of the texture</param>
-        public void LoadTexture(Bitmap image, string name)
+        public Texture LoadTexture(Bitmap image, string name)
         {
             Texture texture = Texture.LoadFromBmp(image, name, false);
+            if (_textures.ContainsKey(name))
+            {
+                GL.DeleteTexture(_textures[name].Handle);
+            }
             _textures[name] = texture;
+            return texture;
         }
 
         /// <summary>

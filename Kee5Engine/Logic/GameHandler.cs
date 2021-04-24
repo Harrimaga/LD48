@@ -4,10 +4,19 @@ using System.Text;
 
 namespace LD48.Logic
 {
+
+    public enum TurnState
+    {
+        PLAYER1,
+        PLAYER2,
+        EVENT,
+        UNDEFINED
+    }
     public class GameHandler
     {
         public Board gameBoard;
         public Player player1, player2;
+        public TurnState state;
         public GameHandler()
         {
             player1 = new Player(0);
@@ -18,6 +27,17 @@ namespace LD48.Logic
         public void StartGame()
         {
             gameBoard = new Board();
+            state = TurnState.PLAYER1;
+        }
+
+        public void EndTurn()
+        {
+            state = (TurnState)(((int)state + 1) % 2);
+            if ((int)state == 0 || (int)state == 1)
+            {
+                GetPlayerFromID((int)state).BeginTurn();
+                gameBoard.BeginTurn((int)state);
+            }
         }
 
         public Player GetPlayerFromID(int id)

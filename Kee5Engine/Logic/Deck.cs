@@ -16,12 +16,17 @@ namespace LD48.Logic
             playerID = id;
             cards = new List<Card>();
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 60; i++)
             {
-                cards.Add(new TestCard(new Vector2(100 + 3 * i, 700 - 300 * playerID + 3 * i), false, playerID));
+                cards.Add(new TestCard(new Vector2(100 + 0.47362f * i, 920 - 800 * playerID + 0.47362f * i), false, playerID));
             }
 
             cards[0].SetActive();
+        }
+
+        public int GetCardsRemaining()
+        {
+            return cards.Count;
         }
 
         public void Update(double delta)

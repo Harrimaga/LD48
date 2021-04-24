@@ -43,10 +43,21 @@ namespace LD48.Logic
                 return false;
             }
 
+            card.SetPosition(new Vector2(440 + cards.Count * 150, 960 - 840 * playerID));
             cards.Add(card);
-            card.SetPosition(new Vector2(100 + cards.Count * 150, 900 - 700 * playerID));
 
             return true;
+        }
+
+        public void RemoveCardFromHand(Card card)
+        {
+            cards.Remove(card);
+            int i = 0;
+            foreach(Card c in cards)
+            {
+                c.SetPosition(new Vector2(440 + i * 150, 960 - 840 * playerID));
+                i++;
+            }
         }
 
     }

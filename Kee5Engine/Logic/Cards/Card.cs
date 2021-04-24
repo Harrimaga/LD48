@@ -22,7 +22,7 @@ namespace LD48.Logic.Cards
         protected bool front;
         protected Vector2 position;
         protected string name;
-        protected int playerID;
+        public int playerID;
 
         protected CardState cardState;
 
@@ -58,12 +58,21 @@ namespace LD48.Logic.Cards
 
         public void OnClick()
         {
-            Console.WriteLine($"Card Clicked! State: {cardState}");
-            switch (cardState)
+            if ((int)Globals.gameHandler.state == playerID)
             {
-                case CardState.DECK:
-                    Globals.gameHandler.GetPlayerFromID(playerID).DrawCard();
-                    break;
+                Console.WriteLine($"Card Clicked! State: {cardState}");
+                switch (cardState)
+                {
+                    case CardState.DECK:
+                        Globals.gameHandler.GetPlayerFromID(playerID).DrawCard();
+                        break;
+                    case CardState.HAND:
+                        if(Play())
+                        {
+                            cardState = CardState.BOARD;
+                        }
+                        break;
+                }
             }
         }
 
@@ -99,6 +108,11 @@ namespace LD48.Logic.Cards
         public virtual bool Play()
         {
             return false;
+        }
+
+        public virtual void Activate()
+        {
+
         }
 
         public virtual bool Play(int x, int y)
