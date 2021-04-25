@@ -38,6 +38,9 @@ namespace LD48.Logic
                 GetPlayerFromID((int)state).BeginTurn();
                 gameBoard.BeginTurn((int)state);
             }
+
+            player1.ChangeTexts();
+            player2.ChangeTexts();
         }
 
         public Player GetPlayerFromID(int id)

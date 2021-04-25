@@ -50,13 +50,18 @@ namespace LD48.Logic.Cards
             Globals.activeButtons.Add(_card);
         }
 
+        public void SetRotation(float degrees)
+        {
+            _card.SetRotation(degrees);
+        }
+
         public void SetPosition(Vector2 position)
         {
             this.position = position;
             _card.SetPosition(position);
         }
 
-        public void OnClick()
+        public virtual void OnClick()
         {
             Globals.cardSelected = null;
             if ((int)Globals.gameHandler.state == playerID)

@@ -37,7 +37,6 @@ namespace LD48.Logic
         public void BeginTurn()
         {
             cardsDrawn = 0;
-            ChangeTexts();
         }
 
         public int getDebt()

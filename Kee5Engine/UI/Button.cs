@@ -203,6 +203,11 @@ namespace LD48
             _background.posY = position.Y;
         }
 
+        public void SetRotation(float deg)
+        {
+            _background.rotation = MathHelper.DegreesToRadians(deg);
+        }
+
         public void SetBackground(Vector4 color)
         {
             _background.color = color;

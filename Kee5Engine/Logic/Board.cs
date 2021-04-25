@@ -1,5 +1,6 @@
 ﻿using LD48.Logic.Cards;
 using LD48.Logic.Cards.Addictions;
+using LD48.Logic.Cards.Events;
 using OpenTK.Mathematics;
 using System;
 using System.Collections.Generic;
@@ -11,25 +12,28 @@ namespace LD48.Logic
     {
         public List<Card> playingField1, playingField2;
         public List<Card> income1, income2;
+        public List<Event> closed, open;
         private Texture bg = Window.textures.GetTexture("Pixel");
 
         private double time = 0;
 
-        private Button endTurn = new Button(1800, 1010, 200, 100, 10f, "Pixel", new Vector4(0.1f, 0.7f, 0.3f, 1), true, () => { Globals.gameHandler.EndTurn(); });
         private Button topField;
         private Button bottomField;
 
         public Board()
         {
-            Globals.activeButtons.Add(endTurn);
             income1 = new List<Card>();
             income2 = new List<Card>();
             playingField1 = new List<Card>();
             playingField2 = new List<Card>();
+            closed = new List<Event>();
+            open = new List<Event>();
             topField = new Button(1135, 390, 1570, 300, 2f, "Pixel", new Vector4(1, 1, 1, 0), true, () => { PlayCardOnField(1, playingField2); });
             bottomField = new Button(1135, 690, 1570, 300, 2f, "Pixel", new Vector4(1, 1, 1, 0), true, () => { PlayCardOnField(0, playingField1); });
             Globals.activeButtons.Add(topField);
             Globals.activeButtons.Add(bottomField);
+
+            FillEventDeck();
         }
 
         public void Update(double delta)
@@ -65,6 +69,36 @@ namespace LD48.Logic
 
             Globals.gameHandler.GetPlayerFromID(0).ChangeTexts();
             Globals.gameHandler.GetPlayerFromID(1).ChangeTexts();
+        }
+
+        public void FillEventDeck()
+        {
+            for (int i = 0; i < Balance.maxTurns * 2; i++)
+            {
+                closed.Add(new GoToStart(new Vector2(1800 + 0.47362f * i, 480 + 0.47362f * i), false));
+            }
+            closed[0].SetActive();
+        }
+
+        public void HandleEvent(Event card)
+        {
+            card.Activate();
+            card.OnEnter((int)Globals.gameHandler.state);
+
+            closed.RemoveAt(0);
+            if (closed.Count > 0)
+            {
+                closed[0].SetActive();
+            }
+
+            open.Add(card);
+            card.Flip();
+            card.SetRotation(90);
+            open.Reverse();
+
+            card.SetPosition(new Vector2(1800 + 0.47362f * 20 - 0.47362f * (open.Count - 1), 590 + 0.47362f * 20 - 0.47362f * (open.Count - 1)));
+
+            Globals.gameHandler.EndTurn();
         }
 
         public void CheckAddAddiction(int fieldi, List<Card> field)
@@ -207,7 +241,15 @@ namespace LD48.Logic
                 card.Draw();
             }
 
-            endTurn.Draw();
+            foreach (Card card in closed)
+            {
+                card.Draw();
+            }
+
+            foreach (Card card in open)
+            {
+                card.Draw();
+            }
         }
     }
 }
