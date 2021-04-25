@@ -7,7 +7,7 @@ namespace LD48.Logic.Cards
 {
     public abstract class Event : Card
     {
-        public Event(string name, Vector2 position, bool front, int playerID) : base(name, position, front, playerID)
+        public Event(string name, Vector2 position, bool front, int playerID) : base(name, position, front, playerID, name)
         {
             _card.SetRotation(90);
         }

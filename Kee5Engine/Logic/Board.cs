@@ -75,7 +75,7 @@ namespace LD48.Logic
         {
             for (int i = 0; i < Balance.maxTurns * 2; i++)
             {
-                closed.Add(new GoToStart(new Vector2(1800 + 0.47362f * i, 480 + 0.47362f * i), false));
+                closed.Add(RandomEvent(new Vector2(1800 + 0.47362f * i, 480 + 0.47362f * i), false));
             }
             closed[0].SetActive();
         }
@@ -231,6 +231,22 @@ namespace LD48.Logic
             }
         }
 
+        public void Fire(int playerID)
+        {
+            List<Card> income = playerID == 0 ? income1 : income2;
+            if(income.Count == 0)
+            {
+                return;
+            }
+            int i = Globals.r.Next(income.Count);
+            income[i].OnLeave();
+            income.RemoveAt(i);
+            if (income.Count > 0)
+            {
+                income[0].SetPosition(new Vector2(400 + 60, 690 - 300 * playerID));
+            }
+        }
+
         public void Draw()
         {
             // Decks
@@ -274,5 +290,65 @@ namespace LD48.Logic
                 card.Draw();
             }
         }
+
+        public Event RandomEvent(Vector2 position, bool front)
+        {
+            Event c = null;
+            int rn = Globals.r.Next(16);
+
+            switch(rn)
+            {
+                case 0:
+                    c = new BankError(position, front);
+                    break;
+                case 1:
+                    c = new Birthday(position, front);
+                    break;
+                case 2:
+                    c = new CarCrash(position, front);
+                    break;
+                case 3:
+                    c = new Cinema(position, front);
+                    break;
+                case 4:
+                    c = new Concert(position, front);
+                    break;
+                case 5:
+                    c = new Fired(position, front);
+                    break;
+                case 6:
+                    c = new GoToStart(position, front);
+                    break;
+                case 7:
+                    c = new Holiday(position, front);
+                    break;
+                case 8:
+                    c = new Kleptomania(position, front);
+                    break;
+                case 9:
+                    c = new Party(position, front);
+                    break;
+                case 10:
+                    c = new PokerEvent(position, front);
+                    break;
+                case 11:
+                    c = new Popo(position, front);
+                    break;
+                case 12:
+                    c = new Pyromania(position, front);
+                    break;
+                case 13:
+                    c = new Shanked(position, front);
+                    break;
+                case 14:
+                    c = new Stonks(position, front);
+                    break;
+                case 15:
+                    c = new TaxManCommeth(position, front);
+                    break;
+            }
+            return c;
+        }
+
     }
 }

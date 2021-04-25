@@ -132,6 +132,11 @@ namespace LD48.Logic
             illegal += amount;
         }
 
+        public int GetIllegal()
+        {
+            return illegal;
+        }
+
         public void AddHappiness(int amount)
         {
             happiness += amount;

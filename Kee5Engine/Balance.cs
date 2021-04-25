@@ -14,10 +14,9 @@ namespace LD48
         public static int baseTravelCost = 10;
         public static int baseCollectableCost = 10;
         public static int baseCollectableHappiness = 1;
+        public static int baseIllegalCost = 50;
         public static int maxTurns = 10;
         public static double happinessIncomeMod = 0.1;
-
-        public static int GoToStartMoney = 200;
 
         public static int collectableCost = 5;
 
@@ -62,6 +61,9 @@ namespace LD48
         public static int socialMediaInternet = 3;
         public static int socialMediaCosts = 30;
 
+        public static int kleptomaniaIllegal = 2;
+        public static int pyromaniaIllegal = 2;
+
         // Income
         public static int incomeLow = 50;
         public static int incomeMhe = 100;
@@ -104,6 +106,29 @@ namespace LD48
         public static int humanTraffickerTravel = 2;
         public static int sugarDaddyInternet = 1;
 
+        // Events
+        public static int GoToStartMoney = 200;
+        public static int StonksMoney = 500;
+        public static double EventGamblingChance = 0.1;
+        public static int EventGamblingLoss = 50;
+        public static int EventGamblingWin = -1000;
+        public static int ConcertCost = 100;
+        public static int ConcertHappiness = 2;
+        public static int PartyCost = 50;
+        public static double PartyChance = 0.2;
+        public static int CinemaCost = 50;
+        public static int CinemaHappiness = 1;
+        public static double ShankedChance = 0.5;
+        public static int ShankedAmount = -500;
+        public static double CarChance = 0.2;
+        public static int CarAmount = -300;
+        public static int BankErrorAmount = -200;
+        public static int TaxAmount = 500;
+        public static int BirtdayAmount = 50;
+        public static int HolidayCost = 150;
+        public static int HolidayTravel = 1;
+        public static int HolidayHappiness = 2;
+
         public static int GetDrawCost(int x)
         {
             return (int)Math.Floor(baseDrawCost * Math.Pow(x, 2));
@@ -127,6 +152,11 @@ namespace LD48
         public static int GetInternetCost(int x)
         {
             return (int)Math.Floor(baseInternetCost * Math.Pow(x, 2));
+        }
+
+        public static int GetPopoCost(int x)
+        {
+            return (int)Math.Floor(baseIllegalCost * Math.Pow(x, 2));
         }
 
         public static bool IsAddiction(Category cat, int x)

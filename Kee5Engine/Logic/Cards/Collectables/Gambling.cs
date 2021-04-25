@@ -10,7 +10,7 @@ namespace LD48.Logic.Cards.Collectables
 
         private static string[] names = new string[] { "Poker", "BlackJack", "Roulette", "Lottery", "Slotmachines", "Betting" };
 
-        public Gambling(Vector2 position, bool front, int playerID) : base(names[Globals.r.Next(names.Length)], position, front, playerID)
+        public Gambling(Vector2 position, bool front, int playerID, string type = null) : base(type == null ? names[Globals.r.Next(names.Length)] : type, position, front, playerID)
         {
             categories.Add(Category.GAMBLING);
         }
