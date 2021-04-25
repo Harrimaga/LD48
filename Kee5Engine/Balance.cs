@@ -8,13 +8,14 @@ namespace LD48
     public static class Balance
     {
         public static int baseDrawCost = 10;
-        public static int baseHousingCost = 150;
-        public static int baseElectricityCost = 15;
-        public static int baseInternetCost = 20;
-        public static int baseTravelCost = 50;
+        public static int baseHousingCost = 50;
+        public static int baseElectricityCost = 5;
+        public static int baseInternetCost = 5;
+        public static int baseTravelCost = 10;
         public static int baseCollectableCost = 10;
         public static int baseCollectableHappiness = 1;
         public static int maxTurns = 10;
+        public static double happinessIncomeMod = 0.1;
 
         public static int GoToStartMoney = 200;
 
@@ -24,6 +25,7 @@ namespace LD48
         public static int gamblingPayout = 10000;
         public static double gamblingChance = 0.0001;
 
+        // Addictions
         public static int alcoholHappiness = -5;
         public static int alcoholCosts = 100;
 
@@ -60,6 +62,47 @@ namespace LD48
         public static int socialMediaInternet = 3;
         public static int socialMediaCosts = 30;
 
+        // Income
+        public static int incomeLow = 50;
+        public static int incomeMhe = 100;
+        public static int incomeHigh = 200;
+
+        public static int drugDealerIllegal = 2;
+        public static int onlyFansInternet = 1;
+        public static int instaModelTravel = 2;
+        public static int streamerInternet = 1;
+        public static int artistHappiness = 5;
+        public static int actorTravel = 1;
+        public static int internDevElectricity = 1;
+        public static int juniorDevElectricity = 1;
+        public static int indieGameDevElectricity = 1;
+        public static int influencerInternet = 1;
+        public static int influencerTravel = 1;
+        public static int astrophysicistHousing = 1;
+        public static int astrophysicistTravel = 1;
+        public static int musicianHappiness = 5;
+        public static int musicianElectricity = 1;
+        public static int writerElectricity = 1;
+        public static int startupTravel = 1;
+        public static int refereeTravel = 1;
+        public static int refereeHappiness = -1;
+        public static int taxiDriverTravel = 2;
+        public static int sporterHousing = 1;
+        public static int sporterTravel = 1;
+        public static int yogaHousing = 1;
+        public static int fastFoodEmployeeHappiness = -1;
+        public static int babysitterHappiness = -1;
+        public static int babysitterUIllegal = 1;
+        public static int hitmanIllegal = 3;
+        public static int hitmanTravel = 1;
+        public static int shoplifterIllegal = 1;
+        public static int conmanIllegal = 1;
+        public static int hackerIllegal = 2;
+        public static int hackerInternet = 1;
+        public static int hackerElectricity = 1;
+        public static int humanTraffickerIllegal = 3;
+        public static int humanTraffickerTravel = 2;
+        public static int sugarDaddyInternet = 1;
 
         public static int GetDrawCost(int x)
         {
@@ -90,5 +133,11 @@ namespace LD48
         {
             return x >= 3;
         }
+
+        public static int ModifyIncome(int income, int happiness)
+        {
+            return (int)(income * (happiness * happinessIncomeMod + 1));
+        }
+
     }
 }

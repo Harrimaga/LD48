@@ -137,5 +137,16 @@ namespace LD48.Logic
             happiness += amount;
         }
 
+        public int GetHappiness()
+        {
+            return happiness;
+        }
+
+        public void AddHousing(int amount)
+        {
+            housing += amount;
+        }
+
+
     }
 }

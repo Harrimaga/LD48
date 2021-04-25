@@ -9,7 +9,7 @@ namespace LD48.Logic.Cards
     {
         protected int income;
 
-        public Income(string name, Vector2 position, bool front, int playerID) : base(name, position, front, playerID)
+        public Income(string name, Vector2 position, bool front, int playerID) : base(name, position, front, playerID, name)
         {
 
         }
@@ -21,7 +21,7 @@ namespace LD48.Logic.Cards
 
         public override void Activate()
         {
-            Globals.gameHandler.GetPlayerFromID(playerID).AddDebt(-GetIncome());
+            Globals.gameHandler.GetPlayerFromID(playerID).AddDebt(-Balance.ModifyIncome(GetIncome(), Globals.gameHandler.GetPlayerFromID(playerID).GetHappiness()));
         }
     }
 }
