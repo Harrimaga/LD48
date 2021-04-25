@@ -31,11 +31,36 @@ namespace LD48
             LoadTexture("Sprites/Cards/CardBack.png", "CardBack");
             LoadTexture("Sprites/Cards/Collectable/Beer.png", "Beer");
 
+            LoadTexture("Sprites/Cards/Income/Actor.png", "Actor");
+            LoadTexture("Sprites/Cards/Income/Artist.png", "Artist");
+            LoadTexture("Sprites/Cards/Income/Astrophysicist.png", "Astrophysicist");
+            LoadTexture("Sprites/Cards/Income/BabySitter.png", "BabySitter");
+            LoadTexture("Sprites/Cards/Income/Conman.png", "Conman");
+            LoadTexture("Sprites/Cards/Income/Delivery.png", "Delivery");
             LoadTexture("Sprites/Cards/Income/DrugDealer.png", "Drug Dealer");
+            LoadTexture("Sprites/Cards/Income/FastFood.png", "FastFood");
+            LoadTexture("Sprites/Cards/Income/Hacker.png", "Hacker");
+            LoadTexture("Sprites/Cards/Income/Hitman.png", "Hitman");
+            LoadTexture("Sprites/Cards/Income/HumanTrafficker.png", "HumanTrafficker");
+            LoadTexture("Sprites/Cards/Income/IndieDev.png", "IndieDev");
+            LoadTexture("Sprites/Cards/Income/Influencer.png", "Influencer");
             LoadTexture("Sprites/Cards/Income/InstaModel.png", "Insta Model");
+            LoadTexture("Sprites/Cards/Income/Intern.png", "Intern");
+            LoadTexture("Sprites/Cards/Income/JunDev.png", "JuniorDev");
+            LoadTexture("Sprites/Cards/Income/Mucisian.png", "Musician");
             LoadTexture("Sprites/Cards/Income/OnlyFence.png", "Only Fence");
+            LoadTexture("Sprites/Cards/Income/Referee.png", "Referee");
             LoadTexture("Sprites/Cards/Income/RiceFarmer.png", "Rice Farmer");
+            LoadTexture("Sprites/Cards/Income/Santa.png", "Santa");
             LoadTexture("Sprites/Cards/Income/ShelfStacker.png", "Shelf Stacker");
+            LoadTexture("Sprites/Cards/Income/ShopLifter.png", "ShopLifter");
+            LoadTexture("Sprites/Cards/Income/Sporter.png", "Sporter");
+            LoadTexture("Sprites/Cards/Income/Streamer.png", "Streamer");
+            LoadTexture("Sprites/Cards/Income/SugarDaddy.png", "SugarDaddy");
+            LoadTexture("Sprites/Cards/Income/TaxiDriver.png", "TaxiDriver");
+            LoadTexture("Sprites/Cards/Income/UndeclaredBabySitter.png", "UBabySitter");
+            LoadTexture("Sprites/Cards/Income/Writer.png", "Writer");
+            LoadTexture("Sprites/Cards/Income/YogaInstructor.png", "YogaInstructor");
         }
 
         /// <summary>
