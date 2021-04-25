@@ -8,6 +8,10 @@ namespace LD48
     public static class Balance
     {
         public static int baseDrawCost = 10;
+        public static int baseHousingCost = 150;
+        public static int baseElectricityCost = 15;
+        public static int baseInternetCost = 20;
+        public static int baseTravelCost = 50;
         public static int baseCollectableCost = 10;
         public static int baseCollectableHappiness = 1;
         public static int maxTurns = 10;
@@ -60,6 +64,26 @@ namespace LD48
         public static int GetDrawCost(int x)
         {
             return (int)Math.Floor(baseDrawCost * Math.Pow(x, 2));
+        }
+
+        public static int GetHousingCost(int x)
+        {
+            return (int)Math.Floor(baseHousingCost * Math.Pow(x, 2));
+        }
+
+        public static int GetElecticityCost(int x)
+        {
+            return (int)Math.Floor(baseElectricityCost * Math.Pow(x, 2));
+        }
+
+        public static int GetTravelCost(int x)
+        {
+            return (int)Math.Floor(baseTravelCost * Math.Pow(x, 2));
+        }
+
+        public static int GetInternetCost(int x)
+        {
+            return (int)Math.Floor(baseInternetCost * Math.Pow(x, 2));
         }
 
         public static bool IsAddiction(Category cat, int x)
