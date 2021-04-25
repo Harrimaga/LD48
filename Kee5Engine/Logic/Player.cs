@@ -37,6 +37,10 @@ namespace LD48.Logic
         public void BeginTurn()
         {
             cardsDrawn = 0;
+            debt += Balance.GetElecticityCost(electicity);
+            debt += Balance.GetHousingCost(housing);
+            debt += Balance.GetInternetCost(internet);
+            debt += Balance.GetTravelCost(travel);
         }
 
         public int getDebt()
