@@ -241,6 +241,15 @@ namespace LD48
                 return;
             }
 
+            // If the drawlist contains more quads than the max quad count,
+            // or the maximum amount of textures are used,
+            // Flush the batch and start a new one
+            if (_drawList.Count > _maxQuadCount - 1 || (_texList.Count > _maxTextureCount - 1 && !_texList.Contains(sprite.texture)))
+            {
+                Flush();
+                Begin();
+            }
+
             // Increment debug data
             Window.spritesDrawn += 1;
 
@@ -266,15 +275,6 @@ namespace LD48
 
             // Add the sprite to the drawlist
             _drawList.Add(sprite);
-
-            // If the drawlist contains more quads than the max quad count,
-            // or the maximum amount of textures are used,
-            // Flush the batch and start a new one
-            if (_drawList.Count > _maxQuadCount - 1 || _texList.Count > _maxTextureCount - 1)
-            {
-                Flush();
-                Begin();
-            }
         }
 
         /// <summary>
@@ -302,7 +302,7 @@ namespace LD48
             _maxIndicesCount = _maxQuadCount * 6;
 
             // Get the maximum textures for this GPU
-            _maxTextureCount = GL.GetInteger(GetPName.MaxTextureImageUnits);
+            _maxTextureCount = 1;
 
             _drawList = new List<Sprite>();
             _texList = new List<Texture>();
@@ -347,7 +347,7 @@ namespace LD48
 
             var texIDLocation = _shader.GetAttribLocation("aTexID");
             GL.EnableVertexAttribArray(texIDLocation);
-            GL.VertexAttribPointer(texIDLocation, 1, VertexAttribPointerType.Int, false, 9 * sizeof(float) + sizeof(int), 9 * sizeof(float));
+            GL.VertexAttribPointer(texIDLocation, 1, VertexAttribPointerType.Float, false, 9 * sizeof(float) + sizeof(int), 9 * sizeof(float));
 
             // Create the EBO
             _elementBufferObject = GL.GenBuffer();

@@ -18,7 +18,7 @@ uniform mat4 projection;
 void main(void)
 {
 	texCoord = aTexCoord;
-	vColor = vec4(aTexID, aColor.yzw);
+	vColor = aColor;
 	vTexID = aTexID;
 
 	gl_Position = vec4(aPosition, 1.0) * view * projection;
