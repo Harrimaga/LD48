@@ -19,11 +19,6 @@ namespace LD48.Logic.Cards
             return 0;
         }
 
-        public override bool Play()
-        {
-            return Globals.gameHandler.gameBoard.PlayCard(this, playerID);
-        }
-
         public override void Activate()
         {
             Globals.gameHandler.GetPlayerFromID(playerID).AddDebt(-GetIncome());

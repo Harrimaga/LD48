@@ -7,9 +7,17 @@ namespace LD48.Logic.Cards
 {
     public abstract class Addiction : Card
     {
-        public Addiction(string name, Vector2 position, bool front, int playerID) : base(name, position, front, playerID)
-        {
+        protected Category category;
 
+        public Addiction(string name, Vector2 position, bool front, int playerID, Category category) : base(name, position, front, playerID)
+        {
+            this.category = category;
         }
+
+        public Category GetCategory()
+        {
+            return category;
+        }
+
     }
 }

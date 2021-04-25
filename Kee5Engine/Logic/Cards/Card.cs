@@ -41,7 +41,7 @@ namespace LD48.Logic.Cards
             }
             else
             {
-                _card = new Button(position.X, position.Y, 100, 180, 5, "TestCard", Vector4.One, false, () => { OnClick(); });
+                _card = new Button(position.X, position.Y, 100, 180, 5, "CardBack", Vector4.One, false, () => { OnClick(); });
             }
         }
 
@@ -58,6 +58,7 @@ namespace LD48.Logic.Cards
 
         public void OnClick()
         {
+            Globals.cardSelected = null;
             if ((int)Globals.gameHandler.state == playerID)
             {
                 Console.WriteLine($"Card Clicked! State: {cardState}");
@@ -102,7 +103,7 @@ namespace LD48.Logic.Cards
 
             if (front)
             {
-                _card = new Button(position.X, position.Y, 100, 180, 5, "TestCard", Vector4.One, false, () => { OnClick(); });
+                _card = new Button(position.X, position.Y, 100, 180, 5, "CardBack", Vector4.One, false, () => { OnClick(); });
             }
             else
             {
@@ -119,7 +120,7 @@ namespace LD48.Logic.Cards
 
         public virtual bool Play()
         {
-            return false;
+            return Globals.gameHandler.gameBoard.PlayCard(this, playerID);
         }
 
         public virtual void Activate()
@@ -130,6 +131,13 @@ namespace LD48.Logic.Cards
         public virtual bool Play(int x, int y)
         {
             return false;
+        }
+
+        public virtual void OnEnter(int playerID) { }
+
+        public virtual void OnLeave() 
+        {
+            Globals.activeButtons.Remove(_card);
         }
 
     }

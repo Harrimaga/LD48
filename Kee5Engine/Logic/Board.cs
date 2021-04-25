@@ -1,4 +1,5 @@
 ﻿using LD48.Logic.Cards;
+using LD48.Logic.Cards.Addictions;
 using OpenTK.Mathematics;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,11 @@ namespace LD48.Logic
         public List<Card> income1, income2;
         private Texture bg = Window.textures.GetTexture("Pixel");
 
+        private double time = 0;
+
         private Button endTurn = new Button(1800, 1010, 200, 100, 10f, "Pixel", new Vector4(0.1f, 0.7f, 0.3f, 1), true, () => { Globals.gameHandler.EndTurn(); });
+        private Button topField;
+        private Button bottomField;
 
         public Board()
         {
@@ -21,11 +26,111 @@ namespace LD48.Logic
             income2 = new List<Card>();
             playingField1 = new List<Card>();
             playingField2 = new List<Card>();
+            topField = new Button(1135, 390, 1570, 300, 2f, "Pixel", new Vector4(1, 1, 1, 0), true, () => { PlayCardOnField(1, playingField2); });
+            bottomField = new Button(1135, 690, 1570, 300, 2f, "Pixel", new Vector4(1, 1, 1, 0), true, () => { PlayCardOnField(0, playingField1); });
+            Globals.activeButtons.Add(topField);
+            Globals.activeButtons.Add(bottomField);
         }
 
         public void Update(double delta)
         {
+            if (Globals.cardSelected != null)
+            {
+                time += delta;
+                topField.SetBackground(new Vector4(1, 0.8f, 1, (float)Math.Abs(Math.Sin(time) * 0.2f)));
+                bottomField.SetBackground(new Vector4(0.8f, 1, 1, (float)Math.Abs(Math.Sin(time) * 0.2f)));
+            }
+            else
+            {
+                topField.SetBackground(new Vector4(1, 0.8f, 1, 0));
+                bottomField.SetBackground(new Vector4(0.8f, 1, 1, 0));
+                time = 0;
+            }
+        }
 
+        public void PlayCardOnField(int fieldi, List<Card> field)
+        {
+            if (Globals.cardSelected == null)
+            {
+                return;
+            }
+            Globals.cardSelected.SetState(CardState.BOARD);
+            field.Add(Globals.cardSelected);
+            Globals.gameHandler.GetPlayerFromID(Globals.cardSelected.playerID).hand.RemoveCardFromHand(Globals.cardSelected);
+            Globals.cardSelected.OnEnter(fieldi);
+            CheckAddAddiction(fieldi, field);
+
+            Globals.cardSelected = null;
+            ResetPositionsField(fieldi, field);
+
+            Globals.gameHandler.GetPlayerFromID(0).ChangeTexts();
+            Globals.gameHandler.GetPlayerFromID(1).ChangeTexts();
+        }
+
+        public void CheckAddAddiction(int fieldi, List<Card> field)
+        {
+            Collectable card = (Collectable)Globals.cardSelected;
+
+            foreach (Category cat in card.GetCategories())
+            {
+                int addictNum = 0;
+                foreach (Card c in field)
+                {
+                    if (c is Addiction)
+                    {
+                        if (((Addiction)c).GetCategory() == cat)
+                        {
+                            addictNum = 0;
+                            break;
+                        }
+                    }
+
+                    if (c is Collectable)
+                    {
+                        if (((Collectable)c).GetCategories().Contains(cat))
+                        {
+                            addictNum++;
+                        }
+                    }
+                }
+
+                if (Balance.IsAddiction(cat, addictNum))
+                {
+                    field.Add(AddAddiction(fieldi, cat));
+
+                    for (int i = field.Count - 1; i >= 0; i--)
+                    {
+                        if (field[i] is Collectable)
+                        {
+                            if (((Collectable)field[i]).GetCategories().Contains(cat))
+                            {
+                                ((Collectable)field[i]).OnLeave();
+                                field.RemoveAt(i);
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+
+        public Card AddAddiction(int fieldi, Category cat)
+        {
+            switch (cat)
+            {
+                case Category.ALCOHOL:
+                    return new Alcohol(Vector2.Zero, true, fieldi);
+
+            }
+            return null;
+        }
+
+        public void ResetPositionsField(int field, List<Card> cards)
+        {
+            for (int i = 0; i < cards.Count; i++)
+            {
+                cards[i].SetPosition(new Vector2(1135 - (cards.Count - 1) * 55 + i * 110, 690 - 300 * field));
+            }
         }
 
         public bool PlayCard(Card card, int side)
@@ -45,9 +150,9 @@ namespace LD48.Logic
                     }
                 }
             }
-            else
+            else if (card is Collectable)
             {
-
+                ((Collectable)card).StartSelection();
             }
 
 
@@ -56,6 +161,7 @@ namespace LD48.Logic
 
         public void BeginTurn(int player)
         {
+            Globals.cardSelected = null;
             List<Card> cards = player == 0 ? playingField1 : playingField2;
             foreach (Card c in cards)
             {
@@ -77,6 +183,9 @@ namespace LD48.Logic
             // Hands
             Window.spriteRenderer.DrawSprite(bg, new Vector2(1135, 120), new Vector2(1570, 240), 3, 0, new Vector4(0.5f, 0.7f, 0.5f, 1));
             Window.spriteRenderer.DrawSprite(bg, new Vector2(1135, 960), new Vector2(1570, 240), 3, 0, new Vector4(0.2f, 0.4f, 0.2f, 1));
+
+            topField.Draw();
+            bottomField.Draw();
 
             foreach (Card card in income1)
             {

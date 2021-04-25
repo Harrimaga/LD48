@@ -1,5 +1,6 @@
 ﻿using LD48.Audio;
 using LD48.Logic;
+using LD48.Logic.Cards;
 using OpenTK.Mathematics;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace LD48
         public static Vector2 windowSize;
         public static List<Button> activeButtons = new List<Button>();
         public static GameHandler gameHandler;
+        public static Card cardSelected = null;
 
         public static int unloaded;
 

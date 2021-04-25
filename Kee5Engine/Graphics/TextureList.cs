@@ -28,6 +28,7 @@ namespace LD48
             LoadTexture("Sprites/Test/Pixel.png", "Pixel");
             LoadTexture("Sprites/Test/PlayerIdle.png", "PlayerIdle");
             LoadTexture("Sprites/Test/PlatinumEnemyCastCard.png", "TestCard");
+            LoadTexture("Sprites/Cards/CardBack.png", "CardBack");
         }
 
         /// <summary>

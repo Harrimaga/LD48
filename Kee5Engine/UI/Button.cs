@@ -203,6 +203,11 @@ namespace LD48
             _background.posY = position.Y;
         }
 
+        public void SetBackground(Vector4 color)
+        {
+            _background.color = color;
+        }
+
         /// <summary>
         /// Check if a click was within the bounds of the button
         /// </summary>
