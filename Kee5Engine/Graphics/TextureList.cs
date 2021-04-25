@@ -30,7 +30,7 @@ namespace LD48
             LoadTexture("Sprites/Test/PlatinumEnemyCastCard.png", "TestCard");
             LoadTexture("Sprites/Cards/CardBack.png", "CardBack");
             LoadTexture("Sprites/Cards/Collectable/Beer.png", "Beer");
-
+            LoadTexture("Sprites/Cards/Income/UndeclaredBabySitter.png", "BabySitter");
             LoadTexture("Sprites/Cards/Income/Actor.png", "Actor");
             LoadTexture("Sprites/Cards/Income/Artist.png", "Artist");
             LoadTexture("Sprites/Cards/Income/Astrophysicist.png", "Astrophysicist");
@@ -45,8 +45,8 @@ namespace LD48
             LoadTexture("Sprites/Cards/Income/IndieDev.png", "IndieDev");
             LoadTexture("Sprites/Cards/Income/Influencer.png", "Influencer");
             LoadTexture("Sprites/Cards/Income/InstaModel.png", "Insta Model");
-            LoadTexture("Sprites/Cards/Income/Intern.png", "Intern");
-            LoadTexture("Sprites/Cards/Income/JunDev.png", "JuniorDev");
+            LoadTexture("Sprites/Cards/Income/Intern.png", "Intern Dev");
+            LoadTexture("Sprites/Cards/Income/JunDev.png", "Junior Dev");
             LoadTexture("Sprites/Cards/Income/Mucisian.png", "Musician");
             LoadTexture("Sprites/Cards/Income/OnlyFence.png", "Only Fence");
             LoadTexture("Sprites/Cards/Income/Referee.png", "Referee");
@@ -58,7 +58,7 @@ namespace LD48
             LoadTexture("Sprites/Cards/Income/Streamer.png", "Streamer");
             LoadTexture("Sprites/Cards/Income/SugarDaddy.png", "SugarDaddy");
             LoadTexture("Sprites/Cards/Income/TaxiDriver.png", "TaxiDriver");
-            LoadTexture("Sprites/Cards/Income/UndeclaredBabySitter.png", "UBabySitter");
+            LoadTexture("Sprites/Cards/Income/UndeclaredBabySitter.png", "BabySitter (undeclared)");
             LoadTexture("Sprites/Cards/Income/Writer.png", "Writer");
             LoadTexture("Sprites/Cards/Income/YogaInstructor.png", "YogaInstructor");
         }

@@ -8,7 +8,7 @@ namespace LD48.Logic.Cards.Jobs
     public class YogaInstructor : Income
     {
 
-        public YogaInstructor(Vector2 position, bool front, int playerID) : base("Yoga Instructor", position, front, playerID)
+        public YogaInstructor(Vector2 position, bool front, int playerID) : base("YogaInstructor", position, front, playerID)
         {
 
         }

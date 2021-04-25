@@ -8,7 +8,7 @@ namespace LD48.Logic.Cards.Jobs
     public class IndieGameDev : Income
     {
 
-        public IndieGameDev(Vector2 position, bool front, int playerID) : base("Indie Game Dev", position, front, playerID)
+        public IndieGameDev(Vector2 position, bool front, int playerID) : base("IndieDev", position, front, playerID)
         {
 
         }

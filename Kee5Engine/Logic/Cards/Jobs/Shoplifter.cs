@@ -8,7 +8,7 @@ namespace LD48.Logic.Cards.Jobs
     public class Shoplifter : Income
     {
 
-        public Shoplifter(Vector2 position, bool front, int playerID) : base("Shoplifter", position, front, playerID)
+        public Shoplifter(Vector2 position, bool front, int playerID) : base("ShopLifter", position, front, playerID)
         {
 
         }

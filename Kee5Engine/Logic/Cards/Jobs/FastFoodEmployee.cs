@@ -8,7 +8,7 @@ namespace LD48.Logic.Cards.Jobs
     public class FastFoodEmployee : Income
     {
 
-        public FastFoodEmployee(Vector2 position, bool front, int playerID) : base("Fast Food Employee", position, front, playerID)
+        public FastFoodEmployee(Vector2 position, bool front, int playerID) : base("FastFood", position, front, playerID)
         {
 
         }

@@ -8,7 +8,7 @@ namespace LD48.Logic.Cards.Jobs
     public class SugarDaddy : Income
     {
 
-        public SugarDaddy(Vector2 position, bool front, int playerID) : base("Sugar Daddy", position, front, playerID)
+        public SugarDaddy(Vector2 position, bool front, int playerID) : base("SugarDaddy", position, front, playerID)
         {
 
         }
