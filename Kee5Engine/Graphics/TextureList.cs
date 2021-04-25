@@ -47,7 +47,7 @@ namespace LD48
             LoadTexture("Sprites/Cards/Income/InstaModel.png", "Insta Model");
             LoadTexture("Sprites/Cards/Income/Intern.png", "Intern");
             LoadTexture("Sprites/Cards/Income/JunDev.png", "JuniorDev");
-            LoadTexture("Sprites/Cards/Income/Musician.png", "Musician");
+            LoadTexture("Sprites/Cards/Income/Mucisian.png", "Musician");
             LoadTexture("Sprites/Cards/Income/OnlyFence.png", "Only Fence");
             LoadTexture("Sprites/Cards/Income/Referee.png", "Referee");
             LoadTexture("Sprites/Cards/Income/RiceFarmer.png", "Rice Farmer");
