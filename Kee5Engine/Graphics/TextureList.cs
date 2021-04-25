@@ -29,6 +29,7 @@ namespace LD48
             LoadTexture("Sprites/Test/PlayerIdle.png", "PlayerIdle");
             LoadTexture("Sprites/Test/PlatinumEnemyCastCard.png", "TestCard");
             LoadTexture("Sprites/Cards/CardBack.png", "CardBack");
+            LoadTexture("Sprites/Cards/Collectable/Beer.png", "Beer");
         }
 
         /// <summary>
