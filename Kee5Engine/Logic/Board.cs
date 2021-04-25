@@ -153,7 +153,7 @@ namespace LD48.Logic
             switch (cat)
             {
                 case Category.ALCOHOL:
-                    return new Alcohol(Vector2.Zero, true, fieldi);
+                    return new AlcoholAdiction(Vector2.Zero, true, fieldi);
 
             }
             return null;

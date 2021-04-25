@@ -17,6 +17,7 @@ namespace LD48
         public static List<Button> activeButtons = new List<Button>();
         public static GameHandler gameHandler;
         public static Card cardSelected = null;
+        public static Random r = new Random();
 
         public static int unloaded;
 

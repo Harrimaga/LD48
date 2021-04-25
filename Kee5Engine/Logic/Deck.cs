@@ -1,4 +1,5 @@
 ﻿using LD48.Logic.Cards;
+using LD48.Logic.Cards.Collectables;
 using OpenTK.Mathematics;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace LD48.Logic
 
             for (int i = 0; i < 60; i++)
             {
-                cards.Add(new TestCard(new Vector2(100 + 0.47362f * i, 920 - 800 * playerID + 0.47362f * i), false, playerID));
+                cards.Add(new Alcohol(new Vector2(100 + 0.47362f * i, 920 - 800 * playerID + 0.47362f * i), false, playerID));
             }
 
             cards[0].SetActive();

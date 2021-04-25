@@ -9,9 +9,13 @@ namespace LD48
     {
         public static int baseDrawCost = 10;
         public static int baseCollectableCost = 10;
+        public static int baseCollectableHappiness = 1;
         public static int maxTurns = 10;
 
         public static int GoToStartMoney = 200;
+
+        public static int collectableCost = 5;
+
 
         public static int GetDrawCost(int x)
         {

@@ -41,12 +41,12 @@ namespace LD48.Logic.Cards
         public override void OnEnter(int playerID)
         {
             this.playerID = playerID;
-            Globals.gameHandler.GetPlayerFromID(playerID).AddHappiness(1);
+            Globals.gameHandler.GetPlayerFromID(playerID).AddHappiness(Balance.baseCollectableHappiness);
         }
 
         public override void OnLeave()
         {
-            Globals.gameHandler.GetPlayerFromID(playerID).AddHappiness(-1);
+            Globals.gameHandler.GetPlayerFromID(playerID).AddHappiness(-Balance.baseCollectableHappiness);
             base.OnLeave();
         }
 
