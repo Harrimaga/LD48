@@ -30,6 +30,12 @@ namespace LD48
             LoadTexture("Sprites/Test/PlatinumEnemyCastCard.png", "TestCard");
             LoadTexture("Sprites/Cards/CardBack.png", "CardBack");
             LoadTexture("Sprites/Cards/Collectable/Beer.png", "Beer");
+
+            LoadTexture("Sprites/Cards/Income/DrugDealer.png", "Drug Dealer");
+            LoadTexture("Sprites/Cards/Income/InstaModel.png", "Insta Model");
+            LoadTexture("Sprites/Cards/Income/OnlyFence.png", "Only Fence");
+            LoadTexture("Sprites/Cards/Income/RiceFarmer.png", "Rice Farmer");
+            LoadTexture("Sprites/Cards/Income/ShelfStacker.png", "Shelf Stacker");
         }
 
         /// <summary>
