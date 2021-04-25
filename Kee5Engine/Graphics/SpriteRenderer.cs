@@ -302,7 +302,7 @@ namespace LD48
             _maxIndicesCount = _maxQuadCount * 6;
 
             // Get the maximum textures for this GPU
-            _maxTextureCount = 1;
+            _maxTextureCount = 32;
 
             _drawList = new List<Sprite>();
             _texList = new List<Texture>();
@@ -347,7 +347,7 @@ namespace LD48
 
             var texIDLocation = _shader.GetAttribLocation("aTexID");
             GL.EnableVertexAttribArray(texIDLocation);
-            GL.VertexAttribPointer(texIDLocation, 1, VertexAttribPointerType.Float, false, 9 * sizeof(float) + sizeof(int), 9 * sizeof(float));
+            GL.VertexAttribIPointer(texIDLocation, 1, VertexAttribIntegerType.Int, 9 * sizeof(float) + sizeof(int), (IntPtr)(9 * sizeof(float)));
 
             // Create the EBO
             _elementBufferObject = GL.GenBuffer();
