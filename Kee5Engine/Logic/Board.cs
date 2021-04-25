@@ -130,7 +130,9 @@ namespace LD48.Logic
 
                 if (Balance.IsAddiction(cat, addictNum))
                 {
-                    field.Add(AddAddiction(fieldi, cat));
+                    Card addiction = AddAddiction(fieldi, cat);
+                    field.Add(addiction);
+                    addiction.OnEnter(fieldi);
 
                     for (int i = field.Count - 1; i >= 0; i--)
                     {
@@ -153,7 +155,27 @@ namespace LD48.Logic
             switch (cat)
             {
                 case Category.ALCOHOL:
-                    return new AlcoholAdiction(Vector2.Zero, true, fieldi);
+                    return new AlcoholAddiction(Vector2.Zero, true, fieldi);
+                case Category.DRUGS:
+                    return new DrugsAddiction(Vector2.Zero, true, fieldi);
+                case Category.EATINGOUT:
+                    return new EatingOutAddiction(Vector2.Zero, true, fieldi);
+                case Category.FASTFOOD:
+                    return new FastFoodAddiction(Vector2.Zero, true, fieldi);
+                case Category.GAMBLING:
+                    return new GamblingAddiction(Vector2.Zero, true, fieldi);
+                case Category.GAMING:
+                    return new GamingAddiction(Vector2.Zero, true, fieldi);
+                case Category.POM_XML:
+                    return new PomXMLAddiction(Vector2.Zero, true, fieldi);
+                case Category.SHOPPING:
+                    return new ShoppingAddiction(Vector2.Zero, true, fieldi);
+                case Category.SMOKING:
+                    return new SmokingAddiction(Vector2.Zero, true, fieldi);
+                case Category.SOCIALMEDIA:
+                    return new SocialMediaAddiction(Vector2.Zero, true, fieldi);
+                case Category.STREAMING:
+                    return new StreamingAddiction(Vector2.Zero, true, fieldi);
 
             }
             return null;

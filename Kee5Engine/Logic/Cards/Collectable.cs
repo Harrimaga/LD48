@@ -23,7 +23,7 @@ namespace LD48.Logic.Cards
     public abstract class Collectable : Card
     {
         protected List<Category> categories = new List<Category>();
-        public Collectable(string name, Vector2 position, bool front, int playerID) : base(name, position, front, playerID)
+        public Collectable(string name, Vector2 position, bool front, int playerID) : base(name, position, front, playerID, name)
         {
 
         }

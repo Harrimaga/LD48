@@ -16,6 +16,46 @@ namespace LD48
 
         public static int collectableCost = 5;
 
+        public static int drugsCollectableIllegal = 1;
+        public static int gamblingPayout = 10000;
+        public static double gamblingChance = 0.0001;
+
+        public static int alcoholHappiness = -5;
+        public static int alcoholCosts = 100;
+
+        public static int smokingHappiness = -5;
+        public static int smokingCosts = 100;
+
+        public static int drugsIllegal = 5;
+        public static int drugsCosts = 200;
+
+        public static int gamingElecticity = 2;
+        public static int gamingInternet = 1;
+        public static int gamingCosts = 30;
+
+        public static int fastFoodTravel = 1;
+        public static int fastFoodCosts = 50;
+
+        public static int eatingOutTravel = 2;
+        public static int eatingOutCosts = 100;
+
+        public static int shoppingTravel = 2;
+        public static int shoppingCosts = 100;
+
+        public static int gamblingTravel = 1;
+        public static int gamblingCosts = 250;
+
+        public static int pomInternet = 2;
+        public static int pomElecticity = 1;
+        public static int pomCosts = 50;
+
+        public static int streamingInternet = 3;
+        public static int streamingElecticity = 3;
+        public static int streamingCosts = 30;
+
+        public static int socialMediaInternet = 3;
+        public static int socialMediaCosts = 30;
+
 
         public static int GetDrawCost(int x)
         {

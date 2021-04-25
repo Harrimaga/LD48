@@ -85,5 +85,11 @@ namespace LD48
                 Globals.unloaded++;
             }
         }
+
+        public bool CheckIfTextureExists(string name)
+        {
+            return _textures.ContainsKey(name);
+        }
+
     }
 }

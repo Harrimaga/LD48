@@ -8,7 +8,7 @@ namespace LD48.Logic.Cards.Collectables
     public class VideoGames : Collectable
     {
 
-        private static string[] names = new string[] { "Tetris", "Mario", "Deck Stack Puzzle Maniac", "Donkey Kong", "Space Invaders", "Pac-Man", "Survival on Feiv" };
+        private static string[] names = new string[] { "Video Games" };
 
         public VideoGames(Vector2 position, bool front, int playerID) : base(names[Globals.r.Next(names.Length)], position, front, playerID)
         {

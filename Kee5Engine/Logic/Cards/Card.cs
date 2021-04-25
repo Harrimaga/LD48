@@ -21,23 +21,33 @@ namespace LD48.Logic.Cards
         protected Button _card;
         protected bool front;
         protected Vector2 position;
-        protected string name;
+        protected string name, frontTexture;
         public int playerID;
 
         protected CardState cardState;
 
-        public Card(string name, Vector2 position, bool front, int playerID)
+        public Card(string name, Vector2 position, bool front, int playerID, string frontTexture = "TestCard")
         {
             this.position = position;
             this.name = name;
             this.front = front;
             this.playerID = playerID;
 
+            if(Window.textures.CheckIfTextureExists(frontTexture))
+            {
+                this.frontTexture = frontTexture;
+            }
+            else
+            {
+                this.frontTexture = "TestCard";
+            }
+            
+
             cardState = CardState.DECK;
 
             if (front)
             {
-                _card = new Button(position.X, position.Y, 100, 180, 5, "TestCard", name, Vector4.One, Vector3.Zero, TextAlignment.CENTER, false, () => { OnClick(); });
+                _card = new Button(position.X, position.Y, 100, 180, 5, this.frontTexture, name, Vector4.One, Vector3.Zero, TextAlignment.CENTER, false, () => { OnClick(); });
             }
             else
             {
@@ -112,7 +122,7 @@ namespace LD48.Logic.Cards
             }
             else
             {
-                _card = new Button(position.X, position.Y, 100, 180, 5, "TestCard", name, Vector4.One, Vector3.Zero, TextAlignment.CENTER, false, () => { OnClick(); });
+                _card = new Button(position.X, position.Y, 100, 180, 5, this.frontTexture, name, Vector4.One, Vector3.Zero, TextAlignment.CENTER, false, () => { OnClick(); });
             }
 
             if (removed)
