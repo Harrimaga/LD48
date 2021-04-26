@@ -35,6 +35,7 @@ namespace LD48
             LoadTexture("Sprites/Cards/Income/Artist.png", "Artist");
             LoadTexture("Sprites/Cards/Income/Astrophysicist.png", "Astrophysicist");
             LoadTexture("Sprites/Cards/Income/BabySitter.png", "BabySitter");
+            LoadTexture("Sprites/Cards/Income/BusDriver.png", "BusDriver");
             LoadTexture("Sprites/Cards/Income/Conman.png", "Conman");
             LoadTexture("Sprites/Cards/Income/Delivery.png", "Delivery");
             LoadTexture("Sprites/Cards/Income/DrugDealer.png", "Drug Dealer");
@@ -61,6 +62,92 @@ namespace LD48
             LoadTexture("Sprites/Cards/Income/UndeclaredBabySitter.png", "BabySitter (undeclared)");
             LoadTexture("Sprites/Cards/Income/Writer.png", "Writer");
             LoadTexture("Sprites/Cards/Income/YogaInstructor.png", "YogaInstructor");
+
+            LoadTexture("Sprites/Cards/Addiction/Alcohol.png", "Alcohol");
+            LoadTexture("Sprites/Cards/Addiction/Drugs.png", "Drugs");
+            LoadTexture("Sprites/Cards/Addiction/EatingOut.png", "EatingOut");
+            LoadTexture("Sprites/Cards/Addiction/FastFoodAdd.png", "FastFoodAddiction");
+            LoadTexture("Sprites/Cards/Addiction/Gambling.png", "Gambling");
+            LoadTexture("Sprites/Cards/Addiction/Gaming.png", "Gaming");
+            LoadTexture("Sprites/Cards/Addiction/Kleptomania.png", "Kleptomania");
+            LoadTexture("Sprites/Cards/Addiction/Shopping.png", "Shopping");
+            LoadTexture("Sprites/Cards/Addiction/Smoking.png", "Smoking");
+            LoadTexture("Sprites/Cards/Addiction/SocialMedia.png", "SocialMedia");
+            LoadTexture("Sprites/Cards/Addiction/Streaming.png", "Streaming");
+            LoadTexture("Sprites/Cards/Addiction/Pyromania.png", "Pyromania");
+
+            LoadTexture("Sprites/Cards/Collectable/Beef.png", "Beef");
+            LoadTexture("Sprites/Cards/Collectable/Betting.png", "Betting");
+            LoadTexture("Sprites/Cards/Collectable/Bitterballen.png", "Bitterballen");
+            LoadTexture("Sprites/Cards/Collectable/Blackjack.png", "Blackjack");
+            LoadTexture("Sprites/Cards/Collectable/Bratwurst.png", "Bratwurst");
+            LoadTexture("Sprites/Cards/Collectable/Cable.png", "Cable");
+            LoadTexture("Sprites/Cards/Collectable/Calendar.png", "Calendar");
+            LoadTexture("Sprites/Cards/Collectable/Carpaccio.png", "Carpaccio");
+            LoadTexture("Sprites/Cards/Collectable/Champagne.png", "Champagne");
+            LoadTexture("Sprites/Cards/Collectable/Cigar.png", "Cigar");
+            LoadTexture("Sprites/Cards/Collectable/Cigarette.png", "Cigarette");
+            LoadTexture("Sprites/Cards/Collectable/Clothes.png", "Clothes");
+            LoadTexture("Sprites/Cards/Collectable/Cocain.png", "Cocain");
+            LoadTexture("Sprites/Cards/Collectable/Dasnyplus.png", "Dasnyplus");
+            LoadTexture("Sprites/Cards/Collectable/Doner.png", "Doner");
+            LoadTexture("Sprites/Cards/Collectable/DonkeyKong.png", "DonkeyKong");
+            LoadTexture("Sprites/Cards/Collectable/Drugs.png", "Drugs");
+            LoadTexture("Sprites/Cards/Collectable/Fries.png", "Fries");
+            LoadTexture("Sprites/Cards/Collectable/Frikadel.png", "Frikadel");
+            LoadTexture("Sprites/Cards/Collectable/Hamburger.png", "Hamburger");
+            LoadTexture("Sprites/Cards/Collectable/Heroin.png", "Heroin");
+            LoadTexture("Sprites/Cards/Collectable/H-Haven.png", "H-Haven");
+            LoadTexture("Sprites/Cards/Collectable/Hooloo.png", "Hooloo");
+            LoadTexture("Sprites/Cards/Collectable/Huves.png", "Huves");
+            LoadTexture("Sprites/Cards/Collectable/Instagrem.png", "Instagrem");
+            LoadTexture("Sprites/Cards/Collectable/Jewelry.png", "Jewelry");
+            LoadTexture("Sprites/Cards/Collectable/Jonko.png", "Jonko");
+            LoadTexture("Sprites/Cards/Collectable/Kaasouffle.png", "Kaasouffle");
+            LoadTexture("Sprites/Cards/Collectable/Ketamine.png", "Ketamine");
+            LoadTexture("Sprites/Cards/Collectable/Lasagne.png", "Lasagne");
+            LoadTexture("Sprites/Cards/Collectable/Lottery.png", "Lottery");
+            LoadTexture("Sprites/Cards/Collectable/Magazine.png", "Magazine");
+            LoadTexture("Sprites/Cards/Collectable/Mario.png", "Mario");
+            LoadTexture("Sprites/Cards/Collectable/MDMA.png", "MDMA");
+            LoadTexture("Sprites/Cards/Collectable/Meth.png", "Meth");
+            LoadTexture("Sprites/Cards/Collectable/Nederwiet.png", "Nederwiet");
+            LoadTexture("Sprites/Cards/Collectable/Netflux.png", "Netflux");
+            LoadTexture("Sprites/Cards/Collectable/OFSub.png", "OFSub");
+            LoadTexture("Sprites/Cards/Collectable/OurTube.png", "OurTube");
+            LoadTexture("Sprites/Cards/Collectable/Pacman.png", "Pacman");
+            LoadTexture("Sprites/Cards/Collectable/Phone.png", "Phone");
+            LoadTexture("Sprites/Cards/Collectable/Pipe.png", "Pipe");
+            LoadTexture("Sprites/Cards/Collectable/Pizza.png", "Pizza");
+            LoadTexture("Sprites/Cards/Collectable/pokebowl.png", "Pokebowl");
+            LoadTexture("Sprites/Cards/Collectable/Poker.png", "Poker");
+            LoadTexture("Sprites/Cards/Collectable/pomsub.png", "Pomsub");
+            LoadTexture("Sprites/Cards/Collectable/Port.png", "Port");
+            LoadTexture("Sprites/Cards/Collectable/Reddit.png", "Reddit");
+            LoadTexture("Sprites/Cards/Collectable/Risotto.png", "Risotto");
+            LoadTexture("Sprites/Cards/Collectable/Roulette.png", "Roulette");
+            LoadTexture("Sprites/Cards/Collectable/Rum.png", "Rum");
+            LoadTexture("Sprites/Cards/Collectable/Salad.png", "Salad");
+            LoadTexture("Sprites/Cards/Collectable/Shoes.png", "Shoes");
+            LoadTexture("Sprites/Cards/Collectable/Slots.png", "Slots");
+            LoadTexture("Sprites/Cards/Collectable/Soda.png", "Soda");
+            LoadTexture("Sprites/Cards/Collectable/Soup.png", "Soup");
+            LoadTexture("Sprites/Cards/Collectable/SpaceInvaders.png", "SpaceInvaders");
+            LoadTexture("Sprites/Cards/Collectable/Speed.png", "Speed");
+            LoadTexture("Sprites/Cards/Collectable/Tablet.png", "Tablet");
+            LoadTexture("Sprites/Cards/Collectable/Tetris.png", "Tetris");
+            LoadTexture("Sprites/Cards/Collectable/TikToc.png", "TikToc");
+            LoadTexture("Sprites/Cards/Collectable/Tweeter.png", "Tweeter");
+            LoadTexture("Sprites/Cards/Collectable/Vape.png", "Vape");
+            LoadTexture("Sprites/Cards/Collectable/Vodka.png", "Vodka");
+            LoadTexture("Sprites/Cards/Collectable/Watch.png", "Watch");
+            LoadTexture("Sprites/Cards/Collectable/Whiskey.png", "Whiskey");
+            LoadTexture("Sprites/Cards/Collectable/Wine.png", "Wine");
+            LoadTexture("Sprites/Cards/Collectable/Feiv.png", "Feiv");
+
+
+            LoadTexture("Sprites/Cards/EventCard.png", "EventCard");
+
         }
 
         /// <summary>

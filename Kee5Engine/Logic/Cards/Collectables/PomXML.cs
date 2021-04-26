@@ -8,7 +8,7 @@ namespace LD48.Logic.Cards.Collectables
     public class PomXML : Collectable
     {
 
-        private static string[] names = new string[] { "Pomhub.xml", "HentaiHaven", "Playboy Magazine", "Only-Fans subscribtion", "\"Calenders\"" };
+        private static string[] names = new string[] { "Pomsub", "H-Haven", "Magazine", "OFSub", "Calender" };
 
         public PomXML(Vector2 position, bool front, int playerID) : base(names[Globals.r.Next(names.Length)], position, front, playerID)
         {

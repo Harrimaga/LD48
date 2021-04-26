@@ -47,7 +47,14 @@ namespace LD48.Logic.Cards
 
             if (front)
             {
-                _card = new Button(position.X, position.Y, 100, 180, 5, this.frontTexture, name, Vector4.One, Vector3.Zero, TextAlignment.CENTER, false, () => { OnClick(); });
+                if (!(this is Event))
+                {
+                    _card = new Button(position.X, position.Y, 100, 180, 5, this.frontTexture, Vector4.One, false, () => { OnClick(); });
+                }
+                else
+                {
+                    _card = new Button(position.X, position.Y, 100, 180, 5, this.frontTexture, name, Vector4.One, Vector3.Zero, TextAlignment.CENTER, false, () => { OnClick(); });
+                }
             }
             else
             {
@@ -58,6 +65,11 @@ namespace LD48.Logic.Cards
         public void SetActive()
         {
             Globals.activeButtons.Add(_card);
+        }
+
+        public void SetLayer(float layer)
+        {
+            _card.layer = layer;
         }
 
         public void SetRotation(float degrees)
@@ -122,7 +134,14 @@ namespace LD48.Logic.Cards
             }
             else
             {
-                _card = new Button(position.X, position.Y, 100, 180, 5, this.frontTexture, name, Vector4.One, Vector3.Zero, TextAlignment.CENTER, false, () => { OnClick(); });
+                if (!(this is Event))
+                {
+                    _card = new Button(position.X, position.Y, 100, 180, 5, this.frontTexture, Vector4.One, false, () => { OnClick(); });
+                }
+                else
+                {
+                    _card = new Button(position.X, position.Y, 100, 180, 5, this.frontTexture, name, Vector4.One, Vector3.Zero, TextAlignment.CENTER, false, () => { OnClick(); });
+                }
             }
 
             if (removed)

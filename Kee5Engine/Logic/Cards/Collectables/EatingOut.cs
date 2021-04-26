@@ -8,7 +8,7 @@ namespace LD48.Logic.Cards.Collectables
     public class EatingOut : Collectable
     {
 
-        private static string[] names = new string[] { "Carpaccio", "Wagyu Beef", "Risotto", "Chef's Soup", "Caesar Salad", "Poké Bowl", "Lasagna" };
+        private static string[] names = new string[] { "Carpaccio", "Beef", "Risotto", "Soup", "Salad", "Pokebowl", "Lasagne" };
 
         public EatingOut(Vector2 position, bool front, int playerID) : base(names[Globals.r.Next(names.Length)], position, front, playerID)
         {
