@@ -72,7 +72,7 @@ namespace LD48
             LoadTexture("Sprites/Cards/Addiction/Kleptomania.png", "Kleptomania");
             LoadTexture("Sprites/Cards/Addiction/Shopping.png", "Shopping");
             LoadTexture("Sprites/Cards/Addiction/Smoking.png", "Smoking");
-            LoadTexture("Sprites/Cards/Addiction/SocialMedia.png", "SocialMedia");
+            LoadTexture("Sprites/Cards/Addiction/SocialMedia.png", "Social Media");
             LoadTexture("Sprites/Cards/Addiction/Streaming.png", "Streaming");
             LoadTexture("Sprites/Cards/Addiction/Pyromania.png", "Pyromania");
             LoadTexture("Sprites/Cards/Addiction/Pom_xml.png", "Pom.XML");

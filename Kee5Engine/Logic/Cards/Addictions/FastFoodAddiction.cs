@@ -7,7 +7,7 @@ namespace LD48.Logic.Cards.Addictions
 {
     public class FastFoodAddiction : Addiction
     {
-        public FastFoodAddiction(Vector2 position, bool front, int playerID) : base("Fast food", position, front, playerID, Category.FASTFOOD)
+        public FastFoodAddiction(Vector2 position, bool front, int playerID) : base("FastFoodAddiction", position, front, playerID, Category.FASTFOOD)
         {
 
         }

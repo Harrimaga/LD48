@@ -8,7 +8,7 @@ namespace LD48.Logic.Cards.Collectables
     public class Shopping : Collectable
     {
 
-        private static string[] names = new string[] { "Clothes", "Shoes", "Watches", "Mobile Phones", "Tablets", "Jewelry" };
+        private static string[] names = new string[] { "Clothes", "Shoes", "Watches", "Phone", "Tablets", "Jewelry" };
 
         public Shopping(Vector2 position, bool front, int playerID) : base(names[Globals.r.Next(names.Length)], position, front, playerID)
         {

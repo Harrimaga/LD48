@@ -100,6 +100,7 @@ namespace LD48
 
             WindowState = WindowState.Fullscreen;
 
+
             screenScaleX = Size.X / WindowSize.X;
             screenScaleY = Size.Y / WindowSize.Y;
 

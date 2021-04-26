@@ -7,7 +7,7 @@ namespace LD48.Logic.Cards.Addictions
 {
     public class EatingOutAddiction : Addiction
     {
-        public EatingOutAddiction(Vector2 position, bool front, int playerID) : base("Eating out", position, front, playerID, Category.EATINGOUT)
+        public EatingOutAddiction(Vector2 position, bool front, int playerID) : base("EatingOut", position, front, playerID, Category.EATINGOUT)
         {
 
         }
