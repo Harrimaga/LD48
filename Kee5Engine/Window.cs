@@ -16,6 +16,13 @@ using LD48.Logic;
 
 namespace LD48
 {
+
+    public enum GameState
+    {
+        PLAYING,
+        GAMEOVER
+    }
+
     public class Window : GameWindow
     {
         public static double timeElapsed = 0;
@@ -97,6 +104,7 @@ namespace LD48
             _backGround = new Sprite(textures.GetTexture("Test"), 1920, 1080, 960, 540, -1f, 0, Vector4.One);
 
             Globals.gameHandler = new GameHandler();
+            Globals.gameHandler.gameBoard.BeginTurn(0);
 
             WindowState = WindowState.Fullscreen;
 

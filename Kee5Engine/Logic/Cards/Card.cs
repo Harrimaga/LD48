@@ -85,6 +85,10 @@ namespace LD48.Logic.Cards
 
         public virtual void OnClick()
         {
+            if (Globals.gameHandler.state == TurnState.PLAYER2)
+            {
+                return;
+            }
             Globals.cardSelected = null;
             if ((int)Globals.gameHandler.state == playerID)
             {

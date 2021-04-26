@@ -36,6 +36,11 @@ namespace LD48.Logic
             return cards.Count < handLimit;
         }
 
+        public List<Card> GetHand()
+        {
+            return cards;
+        }
+
         public bool AddCardToHand(Card card)
         {
             if (cards.Count == handLimit)

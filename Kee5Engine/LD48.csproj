@@ -181,6 +181,9 @@
     <None Update="Sprites\Cards\Collectable\Drugs.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Sprites\Cards\Collectable\Fakebook.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Sprites\Cards\Collectable\Feiv.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

@@ -4,6 +4,7 @@ using LD48.Logic.Cards.Events;
 using OpenTK.Mathematics;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Text;
 
 namespace LD48.Logic
@@ -14,6 +15,7 @@ namespace LD48.Logic
         public List<Card> income1, income2;
         public List<Event> closed, open;
         private Texture bg = Window.textures.GetTexture("Pixel");
+        private Texture turnText;
 
         private double time = 0;
 
@@ -101,6 +103,16 @@ namespace LD48.Logic
             
 
             Globals.gameHandler.EndTurn();
+
+            if (closed.Count == 0)
+            {
+                // Game end.
+
+                int debt1 = Globals.gameHandler.player1.getDebt();
+                int debt2 = Globals.gameHandler.player2.getDebt();
+
+                Globals.gameHandler.EndGame(debt1 > debt2 ? 1 : 0);
+            }
         }
 
         public void CheckAddAddiction(int fieldi, List<Card> field)
@@ -220,6 +232,9 @@ namespace LD48.Logic
 
         public void BeginTurn(int player)
         {
+            Bitmap text = Window.textRenderer.RenderString($"Player {(int)Globals.gameHandler.state + 1}'s Turn", Color.Black);
+            turnText = Window.textures.LoadTexture(text, "TurnText");
+
             Globals.cardSelected = null;
             List<Card> cards = player == 0 ? playingField1 : playingField2;
             foreach (Card c in cards)
@@ -261,6 +276,11 @@ namespace LD48.Logic
 
             topField.Draw();
             bottomField.Draw();
+
+            if (turnText != null)
+            {
+                Window.spriteRenderer.DrawSprite(turnText, new Vector2(175, 500), turnText.Size, 10f, 0, Vector4.One);
+            }
 
             foreach (Card card in income1)
             {

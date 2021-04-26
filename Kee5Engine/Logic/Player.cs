@@ -57,7 +57,10 @@ namespace LD48.Logic
             Card card = deck.DrawCard();
 
             hand.AddCardToHand(card);
-            card.Flip();
+            if (playerID == 0)
+            {
+                card.Flip();
+            }
             card.SetState(CardState.HAND);
 
             cardsDrawn++;

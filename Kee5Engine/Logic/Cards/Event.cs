@@ -14,6 +14,10 @@ namespace LD48.Logic.Cards
 
         public override void OnClick()
         {
+            if (Globals.gameHandler.state == TurnState.PLAYER2)
+            {
+                return;
+            }
             Globals.gameHandler.gameBoard.HandleEvent(this);
         }
 

@@ -96,6 +96,7 @@ namespace LD48
             LoadTexture("Sprites/Cards/Collectable/Drugs.png", "Drugs");
             LoadTexture("Sprites/Cards/Collectable/Fries.png", "Fries");
             LoadTexture("Sprites/Cards/Collectable/Frikadel.png", "Frikadel");
+            LoadTexture("Sprites/Cards/Collectable/Fakebook.png", "Fakebook");
             LoadTexture("Sprites/Cards/Collectable/Hamburger.png", "Hamburger");
             LoadTexture("Sprites/Cards/Collectable/Heroin.png", "Heroin");
             LoadTexture("Sprites/Cards/Collectable/H-Haven.png", "H-Haven");
