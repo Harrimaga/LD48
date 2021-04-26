@@ -135,7 +135,7 @@ namespace LD48
 
         private void LoadText()
         {
-            Window.textRenderer.SetSize(Math.Min(width / 4, height / 2));
+            Window.textRenderer.SetSize(16);
             if (_text.Length > 0)
             {
                 _textRender = Texture.LoadFromBmp(Window.textRenderer.RenderString(_text, Color.FromArgb((int)(_textColor.X * 255), (int)(_textColor.Y * 255), (int)(_textColor.Z * 255)), Color.Transparent), "Button", false);

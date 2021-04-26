@@ -302,7 +302,7 @@ namespace LD48
             _maxIndicesCount = _maxQuadCount * 6;
 
             // Get the maximum textures for this GPU
-            _maxTextureCount = 32;
+            _maxTextureCount = 1;
 
             _drawList = new List<Sprite>();
             _texList = new List<Texture>();

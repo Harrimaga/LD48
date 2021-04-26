@@ -9,7 +9,7 @@ namespace LD48.Logic.Cards
     {
         protected Category category;
 
-        public Addiction(string name, Vector2 position, bool front, int playerID, Category category) : base(name, position, front, playerID)
+        public Addiction(string name, Vector2 position, bool front, int playerID, Category category) : base(name, position, front, playerID, name)
         {
             this.category = category;
         }

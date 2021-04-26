@@ -91,13 +91,14 @@ namespace LD48.Logic
                 closed[0].SetActive();
             }
 
+            open.Clear();
             open.Add(card);
             card.Flip();
             card.SetRotation(90);
             open.Reverse();
 
             card.SetPosition(new Vector2(1800 + 0.47362f * 20 - 0.47362f * (open.Count - 1), 590 + 0.47362f * 20 - 0.47362f * (open.Count - 1)));
-            card.SetLayer(5 + open.Count * 0.2f);
+            
 
             Globals.gameHandler.EndTurn();
         }

@@ -67,7 +67,7 @@ namespace LD48.Logic
             Card c = null;
             if (Globals.r.Next(3) == 0)
             {
-                int cardsCount = 32;
+                int cardsCount = 31;
                 int rn = Globals.r.Next(cardsCount);
                 switch(rn)
                 {
@@ -149,9 +149,6 @@ namespace LD48.Logic
                     case 25:
                         c = new Sporter(position, front, playerID);
                         break;
-                    case 26:
-                        c = new StartupCEO(position, front, playerID);
-                        break;
                     case 27:
                         c = new Streamer(position, front, playerID);
                         break;
@@ -164,14 +161,14 @@ namespace LD48.Logic
                     case 30:
                         c = new Writer(position, front, playerID);
                         break;
-                    case 31:
+                    case 26:
                         c = new YogaInstructor(position, front, playerID);
                         break;
                 }
             }
             else
             {
-                int cardsCount = 13;
+                int cardsCount = 12;
                 int rn = Globals.r.Next(cardsCount);
                 switch (rn)
                 {
@@ -210,9 +207,6 @@ namespace LD48.Logic
                         break;
                     case 11:
                         c = new Streaming(position, front, playerID);
-                        break;
-                    case 12:
-                        c = new VideoGames(position, front, playerID);
                         break;
                 }
             }

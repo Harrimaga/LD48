@@ -106,6 +106,9 @@
     <None Update="Sprites\Cards\Addiction\Kleptomania.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Sprites\Cards\Addiction\Pom_xml.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Sprites\Cards\Addiction\Pyromania.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

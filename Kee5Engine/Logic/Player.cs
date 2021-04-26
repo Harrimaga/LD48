@@ -67,6 +67,8 @@ namespace LD48.Logic
 
         public void ChangeTexts()
         {
+            Window.textRenderer.SetSize(24);
+
             text = Window.textRenderer.RenderString($"Debt: {((float)debt /*/ 100*/)}", Color.Black);
             textDeck = Window.textRenderer.RenderString($"Cards left: {deck.GetCardsRemaining()}", Color.Black);
             textCost = Window.textRenderer.RenderString($"Cost: {Balance.GetDrawCost(cardsDrawn + 1)}", Color.Black);
@@ -92,8 +94,6 @@ namespace LD48.Logic
         {
             hand.Draw();
             deck.Draw();
-
-            Window.textRenderer.SetSize(24);
 
             Window.spriteRenderer.DrawSprite(textTex, new Vector2(175, 590 - 300 * playerID), textTex.Size, 5f, 0, Vector4.One);
             Window.spriteRenderer.DrawSprite(deckTex, new Vector2(175, 630 - 300 * playerID), deckTex.Size, 5f, 0, Vector4.One);

@@ -98,7 +98,10 @@ namespace LD48
 
             Globals.gameHandler = new GameHandler();
 
-            //WindowState = WindowState.Fullscreen;
+            WindowState = WindowState.Fullscreen;
+
+            screenScaleX = Size.X / WindowSize.X;
+            screenScaleY = Size.Y / WindowSize.Y;
 
             base.OnLoad();
         }
@@ -179,10 +182,10 @@ namespace LD48
         /// </summary>
         /// <param name="e">Information about the click</param>
         protected override void OnMouseDown(MouseButtonEventArgs e)
-        {
+        {          
             for (int i = Globals.activeButtons.Count - 1; i >= 0; i--)
             {
-                if (Globals.activeButtons[i].IsInButton(MousePosition.X, MousePosition.Y))
+                if (Globals.activeButtons[i].IsInButton(MousePosition.X / screenScaleX, MousePosition.Y / screenScaleY))
                 {
                     Globals.activeButtons[i].OnClick();
                 }

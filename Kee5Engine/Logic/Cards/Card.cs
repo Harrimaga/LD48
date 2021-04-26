@@ -88,7 +88,7 @@ namespace LD48.Logic.Cards
             Globals.cardSelected = null;
             if ((int)Globals.gameHandler.state == playerID)
             {
-                Console.WriteLine($"Card Clicked! State: {cardState}");
+                Console.WriteLine($"Card Clicked! State: {cardState} | Name: {name}");
                 switch (cardState)
                 {
                     case CardState.DECK:
