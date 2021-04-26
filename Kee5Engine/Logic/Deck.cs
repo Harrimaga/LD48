@@ -65,7 +65,7 @@ namespace LD48.Logic
         private Card RandomCard(Vector2 position, bool front, int playerID)
         {
             Card c = null;
-            if (Globals.r.Next(3) == 0)
+            if (Globals.r.Next(4) == 0)
             {
                 int cardsCount = 31;
                 int rn = Globals.r.Next(cardsCount);
