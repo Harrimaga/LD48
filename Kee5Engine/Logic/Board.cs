@@ -217,6 +217,7 @@ namespace LD48.Logic
                         card.SetPosition(new Vector2(400 + 110 * cards.Count - 50, 690 - 300 * side));
                         Globals.gameHandler.GetPlayerFromID(card.playerID).hand.RemoveCardFromHand(card);
                         card.OnEnter(side);
+                        Globals.gameHandler.GetPlayerFromID(card.playerID).ChangeTexts();
                         return true;
                     }
                 }
